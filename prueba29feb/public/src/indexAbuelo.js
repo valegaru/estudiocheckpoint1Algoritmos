@@ -38,8 +38,20 @@ class AppContainer extends HTMLElement {
  </section>
 
       `;
+
+		//para finalizar la manera larga de renderizar cada carta
 		this.cards.forEach((myCard) => {
 			this.shadowRoot.appendChild(myCard);
+		});
+
+		//manera corta de renderizar las cartas, solo se necesita esto
+		dataCards.forEach((element) => {
+			this.shadowRoot.innerHTML += `<data-card name=${element.name}
+			gender=${element.gender}
+			house=${element.house}
+			image=${element.image}>
+			</data-card>
+		`;
 		});
 	}
 }
